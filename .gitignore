@@ -21,3 +21,5 @@ env/
 # Environment variables
 .env
 *.env
+
+bank_widget dz.zip
