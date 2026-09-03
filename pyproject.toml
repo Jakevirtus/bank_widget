@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "bank_widget"
+version = "0.1.0"
+description = "Виджет для банковских операций"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+# Группа для инструментов разработки (линтеры, форматтеры, статический анализ)
+[tool.poetry.group.lint.dependencies]
+flake8 = ">=7.3.0,<8.0.0"
+black = ">=26.5.1,<27.0.0"
+isort = ">=9.0.1,<10.0.0"
+mypy = ">=2.3.1,<3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Настройки форматтеров и линтеров
+[tool.black]
+line-length = 100
+target-version = ['py313']   # укажите вашу версию Python (если 3.13)
+
+[tool.isort]
+profile = "black"
+line_length = 100
+skip_gitignore = true
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = ["tests"]
