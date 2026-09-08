@@ -1,3 +1,10 @@
-echo "# Bank Widget" > README.md
-git add README.md
-git commit -m "add README"
+# Bank Widget
+
+Виджет для работы с банковскими операциями. Проект содержит функции для маскировки номеров карт и счетов, а также для фильтрации и сортировки транзакций.
+
+## Установка
+
+```bash
+git clone https://github.com/ваш_username/bank_widget.git
+cd bank_widget
+poetry install   # если используется poetry
