@@ -5,6 +5,6 @@
 ## Установка
 
 ```bash
-git clone https://github.com/ваш_username/bank_widget.git
+git clone https://github.com/Jakevirtus/bank_widget.git
 cd bank_widget
 poetry install   # если используется poetry
