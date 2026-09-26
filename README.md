@@ -36,3 +36,12 @@ print(sorted_list)
 sorted_asc = sort_by_date(transactions, reverse=False)  # по возрастанию
 
 
+
+## Тестирование
+
+Проект покрыт тестами с использованием `pytest`.
+
+### Запуск тестов
+
+```bash
+pytest
