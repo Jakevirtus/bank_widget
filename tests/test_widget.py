@@ -61,4 +61,3 @@ class TestGetDate:
         """Проверяет, что при некорректной дате выбрасывается ValueError."""
         with pytest.raises(ValueError):
             get_date("не дата")
-

@@ -60,4 +60,3 @@ class TestGetMaskAccount:
         """Проверяет, что функция выбрасывает ValueError при некорректном вводе."""
         with pytest.raises(ValueError):
             get_mask_account(invalid_number)
-

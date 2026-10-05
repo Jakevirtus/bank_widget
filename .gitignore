@@ -25,3 +25,4 @@ env/
 bank_widget dz.zip
 bank_widget.zip
 main.py
+.coverage
