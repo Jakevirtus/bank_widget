@@ -255,6 +255,35 @@ for card_number in card_number_generator(1, 5):
 # 0000 0000 0000 0005
 ```
 
+## Модуль decorators
+
+Модуль содержит декоратор `log` для автоматического логирования вызовов функций.
+
+### log
+
+Логирует имя функции и результат при успешном выполнении, либо имя функции, текст ошибки и входные параметры при исключении.
+
+```python
+from src.decorators import log
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
+# В файл mylog.txt запишется: my_function ok
+
+@log()
+def divide(x, y):
+    return x / y
+
+divide(1, 0)
+# В консоль выведется: divide error: division by zero. Inputs: (1, 0), {}
+```
+
+**Параметры:**
+- `filename` (опционально) — имя файла для записи логов. Если не указан, логи выводятся в консоль.
+
 ## Тестирование
 
 Проект покрыт тестами с использованием `pytest`.
