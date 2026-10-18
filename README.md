@@ -283,6 +283,47 @@ divide(1, 0)
 
 **Параметры:**
 - `filename` (опционально) — имя файла для записи логов. Если не указан, логи выводятся в консоль.
+## Модуль utils
+
+Функция `load_transactions` читает JSON-файл с транзакциями.
+
+```python
+from src.utils import load_transactions
+
+transactions = load_transactions("data/operations.json")
+print(len(transactions))
+```
+
+Возвращает пустой список, если файл не найден, пуст, содержит не список или битый JSON.
+
+## Модуль external_api
+
+Функция `convert_to_rub` конвертирует сумму транзакции в рубли.
+
+```python
+from src.external_api import convert_to_rub
+
+transaction = {
+    "operationAmount": {
+        "amount": "100.00",
+        "currency": {"code": "USD"}
+    }
+}
+rub_amount = convert_to_rub(transaction)
+print(rub_amount)  # например, 9000.00
+```
+
+Для USD/EUR делает запрос к [Exchange Rates Data API](https://apilayer.com/exchangerates_data-api).
+
+### Переменные окружения
+
+Создайте файл `.env` в корне проекта:
+
+```text
+EXCHANGE_RATES_API_KEY=your_api_key_here
+```
+
+Ключ можно получить на [apilayer.com](https://apilayer.com/marketplace/exchangerates_data-api). Шаблон — `.env.example`.
 
 ## Тестирование
 
