@@ -1,25 +1,38 @@
-     # Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.so
-*.pyd
+*$py.class
 
 # Virtual environments
 venv/
 env/
 .venv/
+ENV/
 
 # IDE files
 .idea/
 .vscode/
 *.iml
+*.iws
 
-# Logs and databases
-*.log
-*.sqlite3
+# Pytest & Coverage caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+coverage.xml
 
-# Environment variables
+# OS generated files (Windows/Mac)
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment variables (СЕКРЕТЫ)
 .env
 *.env
+!.env.example
 
+# Project specific temporary files
+main.py
 bank_widget dz.zip
+bank_widget.zip
