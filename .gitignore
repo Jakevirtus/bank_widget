@@ -36,3 +36,5 @@ Desktop.ini
 main.py
 bank_widget dz.zip
 bank_widget.zip
+logs/
+*.log
