@@ -334,6 +334,32 @@ EXCHANGE_RATES_API_KEY=your_api_key_here
 - Файлы логов перезаписываются при каждом запуске приложения.
 - Папка `logs/` и файлы `*.log` исключены из Git (добавлены в `.gitignore`).
 
+## Модуль csv_excel_reader
+
+Модуль содержит функции для чтения данных из табличных форматов с использованием `pandas`.
+
+### read_csv_transactions
+
+Считывает транзакции из CSV-файла.
+
+```python
+from src.csv_excel_reader import read_csv_transactions
+
+transactions = read_csv_transactions("data/transactions.csv")
+print(len(transactions))
+```
+
+### read_excel_transactions
+
+Считывает транзакции из Excel-файла.
+
+```python
+from src.csv_excel_reader import read_excel_transactions
+
+transactions = read_excel_transactions("data/transactions_excel.xlsx")
+print(len(transactions))
+```
+
 ## Тестирование
 
 Проект покрыт тестами с использованием `pytest`.
