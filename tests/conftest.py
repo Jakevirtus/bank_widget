@@ -3,13 +3,38 @@ import pytest
 
 @pytest.fixture
 def sample_transactions():
-    """Список словарей с транзакциями для тестов filter_by_state и sort_by_date."""
+    """Список словарей с транзакциями для тестов."""
     return [
-        {"id": 1, "state": "EXECUTED", "date": "2024-03-11T02:26:18.671407"},
-        {"id": 2, "state": "CANCELED", "date": "2024-03-10T12:00:00.000000"},
-        {"id": 3, "state": "EXECUTED", "date": "2024-03-12T08:30:00.000000"},
-        {"id": 4, "state": "PENDING", "date": "2024-03-09T18:45:00.000000"},
-        {"id": 5, "state": "EXECUTED", "date": "2024-03-12T08:30:00.000000"},
+        {
+            "id": 1,
+            "state": "EXECUTED",
+            "date": "2024-03-11T02:26:18.671407",
+            "description": "Перевод организации",
+        },
+        {
+            "id": 2,
+            "state": "CANCELED",
+            "date": "2024-03-10T12:00:00.000000",
+            "description": "Перевод со счета на счет",
+        },
+        {
+            "id": 3,
+            "state": "EXECUTED",
+            "date": "2024-03-12T08:30:00.000000",
+            "description": "Перевод организации",
+        },
+        {
+            "id": 4,
+            "state": "PENDING",
+            "date": "2024-03-09T18:45:00.000000",
+            "description": "Оплата услуг",
+        },
+        {
+            "id": 5,
+            "state": "EXECUTED",
+            "date": "2024-03-12T08:30:00.000000",
+            "description": "Перевод с карты на карту",
+        },
     ]
 
 
