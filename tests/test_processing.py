@@ -1,6 +1,11 @@
 import pytest
 
-from src.processing import filter_by_state, sort_by_date
+from src.processing import (
+    filter_by_state,
+    process_bank_operations,
+    process_bank_search,
+    sort_by_date,
+)
 
 
 class TestFilterByState:
@@ -65,3 +70,20 @@ class TestSortByDate:
         original = [item.copy() for item in sample_transactions]
         sort_by_date(sample_transactions)
         assert sample_transactions == original
+
+
+class TestProcessBankSearch:
+    def test_search_found(self, sample_transactions):
+        result = process_bank_search(sample_transactions, "Перевод")
+        assert len(result) > 0
+
+    def test_search_not_found(self, sample_transactions):
+        result = process_bank_search(sample_transactions, "НетТакогоСлова")
+        assert result == []
+
+
+class TestProcessBankOperations:
+    def test_count_operations(self, sample_transactions):
+        categories = ["Перевод организации", "Перевод со счета на счет"]
+        result = process_bank_operations(sample_transactions, categories)
+        assert "Перевод организации" in result
